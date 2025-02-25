@@ -29,6 +29,18 @@ const schema = a.schema({
       is_taxable: a.boolean(), 
       first_billable_date: a.date(),
     }),
+
+    getAccount: a
+    .query()
+    .arguments({ id: a.id().required() })
+    .returns(a.ref("Account"))
+    .authorization(allow => [allow.publicApiKey()])
+    .handler(
+      a.handler.custom({
+        dataSource: "Accounts",
+        entry: "./getAccount.ts",
+      })
+    ),
 });
 
 export type Schema = ClientSchema<typeof schema>;
