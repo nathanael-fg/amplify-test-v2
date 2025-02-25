@@ -3,14 +3,14 @@ import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
 const client = generateClient<Schema>();
-const {data } = await client.queries.getAccount({
-  id: "217174"
-});
+// const {data } = await client.queries.getAccount({
+//   id: "217174"
+// });
 
 function App() {
   // const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
-  console.log(data)
+  // console.log(data)
 
   // useEffect(() => {
   //   client.models.Todo.observeQuery().subscribe({
@@ -31,11 +31,11 @@ function App() {
     <main>
       <h1>Account Info:</h1>
       <button>Placeholder</button>
-      <ul>
+      {/* <ul>
           <li 
           key={data?.id}>{data?.name}
           </li>
-      </ul>
+      </ul> */}
       <div>
         🥳 App successfully hosted. Try creating a new todo.
         <br />
