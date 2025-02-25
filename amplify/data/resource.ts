@@ -12,6 +12,23 @@ const schema = a.schema({
       content: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
+
+    Account: a.customType({
+      id: a.id().required(),
+      name: a.string().required(),
+      firm_id: a.integer(),
+      household_id: a.integer(),
+      inception_date: a.date(),
+      status: a.string(),
+      number: a.string(),
+      custodian: a.integer(),
+      state: a.string(),
+      zip_code: a.string(),
+      acct_type: a.string(),
+      is_tax_deferred: a.boolean(),
+      is_taxable: a.boolean(), 
+      first_billable_date: a.date(),
+    }),
 });
 
 export type Schema = ClientSchema<typeof schema>;
