@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
-const client = generateClient<Schema>();
+// const client = generateClient<Schema>();
 // const {data } = await client.queries.getAccount({
 //   id: "217174"
 // });
