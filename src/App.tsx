@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 
 const client = generateClient<Schema>();
-const {data, errors } = await client.queries.getAccount({
+const {data } = await client.queries.getAccount({
   id: "217174"
 });
 
 function App() {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
+  // const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
   console.log(data)
 
@@ -22,19 +22,15 @@ function App() {
 
   }, []);
 
-  function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Input Account Id") });
-  }
+  // function createTodo() {
+  //   client.models.Todo.create({ content: window.prompt("Input Account Id") });
+  // }
 
-    
-  function deleteTodo(id: string) {
-    client.models.Todo.delete({ id })
-  }
 
   return (
     <main>
       <h1>Account Info:</h1>
-      <button onClick={createTodo}>+ new</button>
+      <button>Placeholder</button>
       <ul>
           <li 
           key={data?.id}>{data?.name}
