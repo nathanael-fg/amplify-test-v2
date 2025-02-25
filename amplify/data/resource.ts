@@ -38,7 +38,7 @@ const schema = a.schema({
     .handler(
       a.handler.custom({
         dataSource: "Accounts",
-        entry: "./getAccount.ts",
+        entry: "./getAccount.js",
       })
     ),
 });
