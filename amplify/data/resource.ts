@@ -30,17 +30,17 @@ const schema = a.schema({
       first_billable_date: a.date(),
     }),
 
-    // getAccount: a
-    // .query()
-    // .arguments({ id: a.id().required() })
-    // .returns(a.ref("Account"))
-    // .authorization(allow => [allow.publicApiKey()])
-    // .handler(
-    //   a.handler.custom({
-    //     dataSource: "Accounts",
-    //     entry: "./getAccount.js",
-    //   })
-    // ),
+    getAccount: a
+    .query()
+    .arguments({ id: a.id().required() })
+    .returns(a.ref("Account"))
+    .authorization(allow => [allow.publicApiKey()])
+    .handler(
+      a.handler.custom({
+        dataSource: "Accounts",
+        entry: "./getAccount.js",
+      })
+    ),
 });
 
 export type Schema = ClientSchema<typeof schema>;
