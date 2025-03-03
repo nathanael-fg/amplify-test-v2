@@ -1,6 +1,6 @@
-import * as ddb from "@aws-appsync/utils/dynamodb";
-import { Amplify } from "aws-amplify";
-import outputs from "../../../amplify_outputs.json";
+// import * as ddb from "@aws-appsync/utils/dynamodb";
+// import { Amplify } from "aws-amplify";
+// import outputs from "../../../amplify_outputs.json";
 
 Amplify.configure(outputs);
 
