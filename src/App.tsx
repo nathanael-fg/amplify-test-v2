@@ -11,10 +11,12 @@ async function App() {
 
   const client = generateClient<Schema>();
   const { data } = await client.queries.getAccount({
-    id: "217174"
+    id: "<217174>"
   });
 
   console.log(data)
+  console.log(data?.name)
+
 
   // useEffect(() => {
   //   client.models.Todo.observeQuery().subscribe({
