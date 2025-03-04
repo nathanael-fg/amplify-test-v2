@@ -6,13 +6,13 @@ import outputs from "../amplify_outputs.json";
 
 Amplify.configure(outputs);
 
-const client = generateClient<Schema>();
-const { data } = await client.queries.getAccount({
-  id: "217174"
-});
-
-function App() {
+async function App() {
   // const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
+
+  const client = generateClient<Schema>();
+  const { data } = await client.queries.getAccount({
+    id: "217174"
+  });
 
   console.log(data)
 
